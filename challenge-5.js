@@ -28,7 +28,7 @@ var main = async () => {
 
     //1st 
     try {
-        await createPerson("Bhavesh", "Sahani", 123456789)
+        await createPerson("Bhavesh", "Sahani", 123456789);
     }
     catch(e) {
         console.log(e);
@@ -36,7 +36,7 @@ var main = async () => {
 
     //2nd
     try {
-        await createPerson("Akash", "Sahani", 123456)
+        await createPerson("Akash", "Sahani", 123456);
     }
     catch(e) {
         console.log(e);
@@ -44,7 +44,7 @@ var main = async () => {
     //3rd
 
     try {
-        await createPerson("Rishabh", "Tiwari", 123456789)
+        await createPerson("Rishabh", "Tiwari", 123456789);
     }
     catch(e) {
         console.log(e);
@@ -52,7 +52,7 @@ var main = async () => {
 
     //4th
     try {
-        await createPerson("Lovelesh", "Gupta", 78787878)
+        await createPerson("Lovelesh", "Gupta", 78787878);
     }
     catch(e) {
         console.log(e);
@@ -60,7 +60,7 @@ var main = async () => {
 
     //5th
     try {
-        await createPerson("Vikas", "Gupta", 987654312)
+        await createPerson("Vikas", "Gupta", 987654312);
     }
     catch(e) {
         console.log(e);
@@ -68,7 +68,7 @@ var main = async () => {
 
     //6th
     try {
-        await createPerson("Bhavesh", "Yadav", 23456461)
+        await createPerson("Bhavesh", "Yadav", 23456461);
     }
     catch(e) {
         console.log(e);
@@ -76,7 +76,7 @@ var main = async () => {
 
     //7th
     try {
-        await createPerson("Siddhesh", "More", 987654312)
+        await createPerson("Siddhesh", "More", 987654312);
     }
     catch(e) {
         console.log(e);
@@ -84,7 +84,7 @@ var main = async () => {
 
     //8th
     try {
-        await createPerson("John", "Doe", 123456789)
+        await createPerson("John", "Doe", 123456789);
     }
     catch(e) {
         console.log(e);
@@ -92,7 +92,7 @@ var main = async () => {
 
     //9th
     try {
-        await createPerson("Arvind", "Kumar", 123321123)
+        await createPerson("Arvind", "Kumar", 123321123);
     }
     catch(e) {
         console.log(e);
@@ -100,7 +100,7 @@ var main = async () => {
 
     //10th
     try {
-        await createPerson("Unknown", "Person", 123321123)
+        await createPerson("Unknown", "Person", 123321123);
     }
     catch(e) {
         console.log(e);
