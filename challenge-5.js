@@ -1,4 +1,4 @@
-var users = [] //Users Array
+let users = [] //Users Array
 
 class Person {
      
@@ -22,9 +22,10 @@ createPerson = (firstName, lastName, mobileNumber) => {
                 }
                 else {
                     //if Mobile number not exist in users array it will push data to array
-                    var Person = {firstName: firstName, lastName: lastName, mobileNumber: mobileNumber};
-                    users.push(Person);
-                    resolve(fullName(firstName, lastName));
+                    const obj = new Person(firstName, lastName, mobileNumber)
+                    let PersonData = {firstName: obj.firstName, lastName: obj.lastName, mobileNumber: obj.mobileNumber};
+                    users.push(PersonData);
+                    resolve(obj.fullName(firstName, lastName));
                 }
             },
             2500 //Wait 2.5sec
@@ -33,22 +34,10 @@ createPerson = (firstName, lastName, mobileNumber) => {
 }
 
 
-var main = async () => {
-
-    const obj1 = new Person("Bhavesh", "Sahani", 123456789);
-    const obj2 = new Person("Akash", "Sahani", 111111);
-    const obj3 = new Person("Rishabh", "Tiwari", 123456789);
-    const obj4 = new Person("Lovelesh", "Gupta", 78787878);
-    const obj5 = new Person("Vikas", "Gupta", 987654312);
-    const obj6 = new Person("Bhavesh", "Yadav", 23456461);
-    const obj7 = new Person("Siddhesh", "More", 987654312);
-    const obj8 = new Person("John", "Doe", 123456789);
-    const obj9 = new Person("Arvind", "Kumar", 123321123);
-    const obj10 = new Person("Unknown", "Person", 123321123);
-
+const main = async () => {
     //1st 
     try {
-        await createPerson(obj1.firstName, obj1.lastName, obj1.mobileNumber);
+        await createPerson("Bhavesh", "Sahani", 123456789);
     }
     catch(e) {
         console.log(e);
@@ -56,7 +45,7 @@ var main = async () => {
 
     //2nd
     try {
-        await createPerson(obj2.firstName, obj2.lastName, obj2.mobileNumber);
+        await createPerson("Akash", "Sahani", 111111);
     }
     catch(e) {
         console.log(e);
@@ -64,7 +53,7 @@ var main = async () => {
     //3rd
 
     try {
-        await createPerson(obj3.firstName, obj3.lastName, obj3.mobileNumber);
+        await createPerson("Rishabh", "Tiwari", 123456789);
     }
     catch(e) {
         console.log(e);
@@ -72,7 +61,7 @@ var main = async () => {
 
     //4th
     try {
-        await createPerson(obj4.firstName, obj4.lastName, obj4.mobileNumber);
+        await createPerson("Lovelesh", "Gupta", 78787878);
     }
     catch(e) {
         console.log(e);
@@ -80,7 +69,7 @@ var main = async () => {
 
     //5th
     try {
-        await createPerson(obj5.firstName, obj5.lastName, obj5.mobileNumber);
+        await createPerson("Vikas", "Gupta", 987654312);
     }
     catch(e) {
         console.log(e);
@@ -88,7 +77,7 @@ var main = async () => {
 
     //6th
     try {
-        await createPerson(obj6.firstName, obj6.lastName, obj6.mobileNumber);
+        await createPerson("Bhavesh", "Yadav", 23456461);
     }
     catch(e) {
         console.log(e);
@@ -96,7 +85,7 @@ var main = async () => {
 
     //7th
     try {
-        await createPerson(obj7.firstName, obj7.lastName, obj7.mobileNumber);
+        await createPerson("Siddhesh", "More", 987654312);
     }
     catch(e) {
         console.log(e);
@@ -104,7 +93,7 @@ var main = async () => {
 
     //8th
     try {
-        await createPerson(obj8.firstName, obj8.lastName, obj8.mobileNumber);
+        await createPerson("John", "Doe", 123456789);
     }
     catch(e) {
         console.log(e);
@@ -112,7 +101,7 @@ var main = async () => {
 
     //9th
     try {
-        await createPerson(obj9.firstName, obj9.lastName, obj9.mobileNumber);
+        await createPerson("Arvind", "Kumar", 123321123);
     }
     catch(e) {
         console.log(e);
@@ -120,7 +109,7 @@ var main = async () => {
 
     //10th
     try {
-        await createPerson(obj10.firstName, obj10.lastName, obj10.mobileNumber);
+        await createPerson("Unknown", "Person", 123321123);
     }
     catch(e) {
         console.log(e);

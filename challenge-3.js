@@ -1,10 +1,10 @@
-var nums = [10, -12, 30, -1, -8, 0, 14, -33, 20];
+let nums = [10, -12, 30, -1, -8, 0, 14, -33, 20];
 
 sumPlusMinus(nums);
 
-var sumPlusMinus = (nums) => {
-    var positiveSum = 0;
-    var negativeSum = 0;
+const sumPlusMinus = (nums) => {
+    let positiveSum = 0;
+    let negativeSum = 0;
     for (i in nums) {
         if(nums[i] <= 0) {
             negativeSum += nums[i];
@@ -14,7 +14,7 @@ var sumPlusMinus = (nums) => {
         }
     }
 
-    var answer = {plus : positiveSum, minus : negativeSum }
+    let answer = {plus : positiveSum, minus : negativeSum }
 
     console.log(answer);
 }

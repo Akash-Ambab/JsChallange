@@ -1,4 +1,4 @@
-var users = []//Users Array
+let users = []//Users Array
 
 class Person {
      
@@ -22,9 +22,10 @@ createPerson = (firstName, lastName, mobileNumber) => {
                 }
                 else {
                     //if Mobile number not exist in users array it will push data to array
-                    var Person = {firstName: firstName, lastName: lastName, mobileNumber: mobileNumber};
-                    users.push(Person);
-                    resolve(fullName(firstName, lastName));
+                    const obj = new Person(firstName, lastName, mobileNumber)
+                    let PersonData = {firstName: obj.firstName, lastName: obj.lastName, mobileNumber: obj.mobileNumber};
+                    users.push(PersonData);
+                    resolve(obj.fullName(firstName, lastName));
                 }
             },
             2500 //Wait 2.5sec
@@ -32,50 +33,36 @@ createPerson = (firstName, lastName, mobileNumber) => {
     })
 }
 
-var main = () => {
-
-    const obj1 = new Person("Bhavesh", "Sahani", 123456789);
-    const obj2 = new Person("Akash", "Sahani", 111111);
-    const obj3 = new Person("Rishabh", "Tiwari", 123456789);
-    const obj4 = new Person("Lovelesh", "Gupta", 78787878);
-    const obj5 = new Person("Vikas", "Gupta", 987654312);
-    const obj6 = new Person("Bhavesh", "Yadav", 23456461);
-    const obj7 = new Person("Siddhesh", "More", 987654312);
-    const obj8 = new Person("John", "Doe", 123456789);
-    const obj9 = new Person("Arvind", "Kumar", 123321123);
-    const obj10 = new Person("Unknown", "Person", 123321123);
+const main = () => {
     //Promise chaining
 
-    createPerson(obj1.firstName, obj1.lastName, obj1.mobileNumber) //1st
-    .then(() => createPerson(obj2.firstName, obj2.lastName, obj2.mobileNumber)) //2nd
+    createPerson("Bhavesh", "Sahani", 123456789) //1st
+    .then(() => createPerson("Akash", "Sahani", 111111)) //2nd
     .catch((error) => console.log(error))
 
-    .then(() => createPerson(obj3.firstName, obj3.lastName, obj3.mobileNumber)) //3rd
+    .then(() => createPerson("Rishabh", "Tiwari", 123456789)) //3rd
     .catch((error) => console.log(error))
 
-    .then(() => createPerson(obj4.firstName, obj4.lastName, obj4.mobileNumber)) //4th
+    .then(() => createPerson("Lovelesh", "Gupta", 78787878)) //4th
     .catch((error) => console.log(error))
 
-    .then(() => createPerson(obj5.firstName, obj5.lastName, obj5.mobileNumber)) //5th
+    .then(() => createPerson("Vikas", "Gupta", 987654312)) //5th
     .catch((error) => console.log(error))
 
-    .then(() => createPerson(obj6.firstName, obj6.lastName, obj6.mobileNumber)) //6th
+    .then(() => createPerson("Bhavesh", "Yadav", 23456461)) //6th
     .catch((error) => console.log(error))
 
-    .then(() => createPerson(obj7.firstName, obj7.lastName, obj7.mobileNumber)) //7th
+    .then(() => createPerson("Siddhesh", "More", 987654312)) //7th
     .catch((error) => console.log(error))
 
-    .then(() => createPerson(obj8.firstName, obj8.lastName, obj8.mobileNumber)) //8th
+    .then(() => createPerson("John", "Doe", 123456789)) //8th
     .catch((error) => console.log(error))
 
-    .then(() => createPerson(obj9.firstName, obj9.lastName, obj9.mobileNumber)) //9th
+    .then(() => createPerson("Arvind", "Kumar", 123321123)) //9th
     .catch((error) => console.log(error))
     
-    .then(() => createPerson(obj10.firstName, obj10.lastName, obj10.mobileNumber)) //10th
+    .then(() => createPerson("Unknown", "Person", 123321123)) //10th
     .catch((error) => console.log(error));
 }
 
 main();
-
-
-
