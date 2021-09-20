@@ -14,7 +14,7 @@ const sumPlusMinus = (nums) => {
         }
     }
 
-    let answer = {plus : positiveSum, minus : negativeSum }
+    let answer = { plus : positiveSum, minus : negativeSum }
 
     console.log(answer);
 }

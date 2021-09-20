@@ -8,7 +8,7 @@ class Person {
         this.mobileNumber = mobileNumber;
     }
 
-    fullName = (firstName, lastName) => console.log(firstName + " " + lastName);
+    fullName = (firstName, lastName) => `${firstName} ${lastName}`;
 }
 
 createPerson = (firstName, lastName, mobileNumber) => {
@@ -18,13 +18,12 @@ createPerson = (firstName, lastName, mobileNumber) => {
             () => {
                 if(users.some(number => number.mobileNumber === mobileNumber)) {
                     //Condition will check is mobilenumber exist in user array or not
-                    reject("Phone number already exist !!");
+                    reject(`Mobile number ${mobileNumber} already exist`);
                 }
                 else {
                     //if Mobile number not exist in users array it will push data to array
                     const obj = new Person(firstName, lastName, mobileNumber)
-                    let PersonData = {firstName: obj.firstName, lastName: obj.lastName, mobileNumber: obj.mobileNumber};
-                    users.push(PersonData);
+                    users.push(obj);
                     resolve(obj.fullName(firstName, lastName));
                 }
             },
@@ -37,7 +36,9 @@ createPerson = (firstName, lastName, mobileNumber) => {
 const main = async () => {
     //1st 
     try {
-        await createPerson("Bhavesh", "Sahani", 123456789);
+        const result = await createPerson("Bhavesh", "Sahani", 123456789);
+        console.log(result);
+
     }
     catch(e) {
         console.log(e);
@@ -45,7 +46,8 @@ const main = async () => {
 
     //2nd
     try {
-        await createPerson("Akash", "Sahani", 111111);
+        const result = await createPerson("Akash", "Sahani", 111111);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -53,7 +55,8 @@ const main = async () => {
     //3rd
 
     try {
-        await createPerson("Rishabh", "Tiwari", 123456789);
+        const result = await createPerson("Rishabh", "Tiwari", 123456789);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -61,7 +64,8 @@ const main = async () => {
 
     //4th
     try {
-        await createPerson("Lovelesh", "Gupta", 78787878);
+        const result = await createPerson("Lovelesh", "Gupta", 78787878);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -69,7 +73,8 @@ const main = async () => {
 
     //5th
     try {
-        await createPerson("Vikas", "Gupta", 987654312);
+        const result = await createPerson("Vikas", "Gupta", 987654312);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -77,7 +82,8 @@ const main = async () => {
 
     //6th
     try {
-        await createPerson("Bhavesh", "Yadav", 23456461);
+        const result = await createPerson("Bhavesh", "Yadav", 23456461);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -85,7 +91,8 @@ const main = async () => {
 
     //7th
     try {
-        await createPerson("Siddhesh", "More", 987654312);
+        const result = await createPerson("Siddhesh", "More", 987654312);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -93,7 +100,8 @@ const main = async () => {
 
     //8th
     try {
-        await createPerson("John", "Doe", 123456789);
+        const result = await createPerson("John", "Doe", 123456789);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -101,7 +109,8 @@ const main = async () => {
 
     //9th
     try {
-        await createPerson("Arvind", "Kumar", 123321123);
+        const result = await createPerson("Arvind", "Kumar", 123321123);
+        console.log(result);
     }
     catch(e) {
         console.log(e);
@@ -109,7 +118,8 @@ const main = async () => {
 
     //10th
     try {
-        await createPerson("Unknown", "Person", 123321123);
+        const result = await createPerson("Unknown", "Person", 123321123);
+        console.log(result);
     }
     catch(e) {
         console.log(e);

@@ -18,12 +18,11 @@ createPerson = (firstName, lastName, mobileNumber) => {
             () => {
                 if(users.some(number => number.mobileNumber === mobileNumber)) {
                     //Condition will check is mobilenumber exist in user array or not
-                    reject("Phone number already exist !!");
+                    reject(`${mobileNumber} already exist`);
                 }
                 else {
                     //if Mobile number not exist in users array it will push data to array
                     const obj = new Person(firstName, lastName, mobileNumber)
-                    // let PersonData = {firstName: obj.firstName, lastName: obj.lastName, mobileNumber: obj.mobileNumber};
                     users.push(obj);
                     resolve(obj.fullName(firstName, lastName));
                 }
